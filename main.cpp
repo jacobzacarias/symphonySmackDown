@@ -62,7 +62,6 @@ int main() {
     return 0;
 }
         
-        
 // Function to calculate damage
 int calculateDamage(int attackType) {
     int damage = 0;
@@ -83,7 +82,7 @@ int main() {
 // Game loop
     while (true) {
         // Game logic
-        int enemyAttackType = 2; // Assume opponent uses medium attack
+        int opponentAttackType = 2; // Assume opponent uses medium attack
         int playerHealth = 100;
         
         // Calculate damage based on opponent attack type
@@ -93,9 +92,6 @@ int main() {
         // Subtract damage from player health
         playerHealth -= damage;
         cout << "Player health is now " << playerHealth << endl;
-        
-        #include <iostream>
-using namespace std;
 
 // Function to handle frame perfect parry blocking
 void parryBlock() {
@@ -143,6 +139,8 @@ int main() {
             }
         }
     }
+   return 0;
+}
 
 // Function to play idle animation
 void playIdleAnimation() {
