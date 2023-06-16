@@ -41,16 +41,15 @@ int main() {
     // Game loop
     while (true) {
         // Game logic
-        bool playerHitEnemy = false;
+        bool playerHitOpponent = false;
         bool playerHitObstacle = true;
-        
-        // Check if player hit an enemy
-        if (playerHitEnemy) {
+
+        // Check if player hit an opponent
+        if (playerHitOpponent) {
             // Trigger haptic feedback
             triggerHapticFeedback();
-            cout << "Player hit an enemy!" << endl;
+            cout << "Player hit an opponent!" << endl;
         }
-    }
         
         // Check if player hit an obstacle
         if (playerHitObstacle) {
@@ -58,6 +57,9 @@ int main() {
             triggerHapticFeedback();
             cout << "Player hit an obstacle!" << endl;
         }
+    }
+    
+    return 0;
 }
         
         
@@ -86,7 +88,7 @@ int main() {
         
         // Calculate damage based on opponent attack type
         int damage = calculateDamage(enemyAttackType);
-        cout << "Enemy used attack type " << enemyAttackType << ", causing " << damage << " damage!" << endl;
+        cout << "Opponent used attack type " << opponentAttackType << ", causing " << damage << " damage!" << endl;
         
         // Subtract damage from player health
         playerHealth -= damage;
@@ -111,13 +113,13 @@ int main() {
     // Game loop
     while (true) {
         // Game logic
-        bool enemyAttackIncoming = true;
-        int enemyAttackType = 2; // Assume enemy uses medium attack
+        bool opponentAttackIncoming = true;
+        int opponentAttackType = 2; // Assume enemy uses medium attack
         bool playerParryBlock = false;
         int playerHealth = 100;
         
         // Check if enemy attack incoming
-        if (enemyAttackIncoming) {
+        if (opponentAttackIncoming) {
             // Check if player performs a frame perfect parry block
             if (playerParryBlock) {
                 // Perform a counter attack
@@ -126,17 +128,17 @@ int main() {
             } else {
                 // Calculate damage based on enemy attack type
                 int damage = 0;
-                if (enemyAttackType == 1) {
+                if (opponentAttackType == 1) {
                     damage = 10; // Light attack
-                } else if (enemyAttackType == 2) {
+                } else if (opponentAttackType == 2) {
                     damage = 20; // Medium attack
-                } else if (enemyAttackType == 3) {
+                } else if (opponentAttackType == 3) {
                     damage = 30; // Heavy attack
                 }
                 
                 // Subtract damage from player health
                 playerHealth -= damage;
-                cout << "Enemy used attack type " << enemyAttackType << ", causing " << damage << " damage!" << endl;
+                cout << "Opponent used attack type " << opponentAttackType << ", causing " << damage << " damage!" << endl;
                 cout << "Player health is now " << playerHealth << endl;
             }
         }
