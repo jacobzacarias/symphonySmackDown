@@ -1,2 +1,19 @@
 # symphonySmackDown
 Open source mobile rhythm game made in c++
+
+# Gesture Game Controller
+
+A simple gesture game controller program that offers invuitive touch screen gestures and in-game actions.
+
+---
+
+### Usage
+
+1. Compile and run the program for the mobile game "Symphony Smack Down".
+2. Game loop continuously detects gesture inputs and processes the output needed to be executed.
+3. Tap, swipe, or scroll touch screen gesture imputs output the correct in-game actions expected to run.
+4. Users who recognize talent and good game design when they see it inform their friends and family!
+
+---
+
+**Note:** This program implements swipe gestures (such as up, down, left, and right), haptic feedback, and various other in-game actions.
