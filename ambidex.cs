@@ -56,7 +56,7 @@ int main() {
         // Receive input from the user (e.g., swipe, tap, double tap)
         std::string input;
         std::cout << "Enter input: ";
-        std::cin >> input;
+        std::getline(std::cin, input);
 
         // Handle input based on user's handedness
         handleInput(isLeftHanded, input);
