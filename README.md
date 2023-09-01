@@ -3,7 +3,7 @@ Open source mobile rhythm game made in c++
 
 # Gesture Game Controller
 
-A simple gesture game controller program that offers invuitive touch screen gestures and in-game actions.
+A simple gesture controller program that offers invuitive touch screen gestures and in-game actions.
 
 ---
 
