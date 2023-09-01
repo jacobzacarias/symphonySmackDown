@@ -84,6 +84,56 @@ const vertices = [
     0, 0, 1
 ];
 
+// Function to compile a shader
+function compileShader(gl, source, type) {
+    const shader = gl.createShader(type);
+    gl.shaderSource(shader, source);
+    gl.compileShader(shader);
+
+    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+        console.error("An error occurred compiling the shaders: " + gl.getShaderInfoLog(shader));
+        gl.deleteShader(shader);
+        return null;
+    }
+
+    return shader;
+}
+
+// Function to link shaders into a program
+function linkProgram(gl, vertexShader, fragmentShader) {
+    const program = gl.createProgram();
+    gl.attachShader(program, vertexShader);
+    gl.attachShader(program, fragmentShader);
+    gl.linkProgram(program);
+
+    if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+        console.error("Unable to initialize the shader program: " + gl.getProgramInfoLog(program));
+        return null;
+    }
+
+    return program;
+}
+
+// Function to create and bind a vertex buffer
+function createVertexBuffer(gl, data) {
+    const vertexBuffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(data), gl.STATIC_DRAW);
+    return vertexBuffer;
+}
+
+// Function to enable and specify vertex attributes
+function setVertexAttrib(gl, program, attributeLocation, size, type, stride, offset) {
+    const attribLocation = gl.getAttribLocation(program, attributeLocation);
+    gl.enableVertexAttribArray(attribLocation);
+    gl.vertexAttribPointer(attribLocation, size, type, false, stride, offset);
+}
+
+// Function to set uniform matrix and vector values
+function setUniformMatrix4fv(gl, program, uniformLocation, value) {
+    gl.uniformMatrix4fv(uniformLocation, false, value);
+}
+
 gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
 
 // Specify vertex attributes
