@@ -43,6 +43,28 @@ int calculateDamage(int attackType) {
     return damage;
 }
 
+{
+int playerHealth = 100; // Initial health
+
+int calculateDamage(int attackType) {
+    // Existing damage calculation code
+
+    // Deduct damage from player's health
+    playerHealth -= damage;
+
+    // Check if player is defeated
+    if (playerHealth <= 0) {
+        cout << "Player defeated!" << endl;
+    }
+
+    return damage;
+}
+
+void playSoundEffect(string sound) {
+    // Code to play the specified sound effect
+    cout << "Playing sound effect: " << sound << endl;
+}
+
 // Function to handle frame perfect parry blocking
 void parryBlock() {
     // Code to perform a frame perfect parry block
