@@ -43,11 +43,20 @@ int calculateDamage(int attackType) {
     return damage;
 }
 
-{
 int playerHealth = 100; // Initial health
 
+// Function to calculate damage
 int calculateDamage(int attackType) {
-    // Existing damage calculation code
+    int damage = 0;
+
+    // Calculate damage based on attack type
+    if (attackType == 1) {
+        damage = 5; // Light attack
+    } else if (attackType == 2) {
+        damage = 10; // Medium attack
+    } else if (attackType == 3) {
+        damage = 15; // Heavy attack
+    }
 
     // Deduct damage from player's health
     playerHealth -= damage;
@@ -60,20 +69,21 @@ int calculateDamage(int attackType) {
     return damage;
 }
 
+// Function to play sound effects
 void playSoundEffect(string sound) {
     // Code to play the specified sound effect
     cout << "Playing sound effect: " << sound << endl;
 }
 
-// Function to handle frame perfect parry blocking
+// Function to handle frame-perfect parry blocking
 void parryBlock() {
-    // Code to perform a frame perfect parry block
+    // Code to perform a frame-perfect parry block
     cout << "Parry block successful!" << endl;
 }
 
-// Function to handle counter attack
+// Function to handle counter-attack
 void counterAttack() {
-    // Code to perform a counter attack
+    // Code to perform a counter-attack
     cout << "Counter attack successful!" << endl;
 }
 
@@ -132,7 +142,7 @@ int main() {
         // Game logic
 
         // Check for gesture input
-        int gestureType = detectGestureInput();
+        int gestureType = detectGestureInput(); // Assuming detectGestureInput function is defined elsewhere
 
         // Handle gesture input and output game controls
         handleGestureInput(gestureType);
