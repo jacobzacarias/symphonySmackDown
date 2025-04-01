@@ -1,5 +1,5 @@
 # symphonySmackDown
-Open source mobile rhythm game made in c++
+Concept for an source mobile rhythm game originally planned to be made in c++ and later transitioned to GDScript
 
 # Gesture Game Controller
 
